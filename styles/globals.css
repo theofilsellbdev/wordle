@@ -1,0 +1,363 @@
+* {
+  transition: .1s ease-out;
+  font-family: system-ui;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.body {
+  overflow: hidden;
+  background-color: #171b21;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  left:0px;
+  top:0px;
+  color:#EEEEEE;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.WordleContainer {
+  display: flex;
+  width: 100%;
+  height: fill;
+  align-items: center;
+  justify-content: center;
+
+} 
+
+.tableContainer {
+  display: table;
+  width: 350px;
+}
+
+.tableContainer .row {
+  display: table-row;
+}
+
+.tableContainer .row .cell {
+  position: relative;
+  display: table-cell;
+  width: 70px;
+  Height: 70px;
+}
+
+.tableContainer .row .cell .inDiv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+
+  width: 60px;
+  height: 60px;
+  line-hight: 0px;
+  border: #999999 1.5px solid;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  border-collapse: collapse;
+  font-weight: 700;
+  
+}
+
+.tableContainer .row .cell .inDivEntry {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 60px;
+  height: 60px;
+  line-hight: 0px;
+  border: #EEEEEE 1px solid;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  border-collapse: collapse;
+  font-weight: 800;
+  
+}
+
+.tableContainer .row .cell .RLWP {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  
+  background-color: #FFD369;
+  color: #343d4b;
+  font-weight: 800;
+
+
+}
+
+.tableContainer .row .cell .RLRP {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 62px;
+  height: 62px;
+
+
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  
+  background-color: #78d058;
+    color: #343d4b;
+  font-weight: 800;
+  
+
+
+}
+
+.tableContainer .row .cell .WLWP {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+
+  background-color: #EEEEEE;
+  color: #343d4b;
+  font-weight: 800;
+  
+
+
+
+
+}
+
+.KeyboardContainer {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.KeyboardContainer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: collumn;
+}
+
+.KeyboardContainer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: collumn;
+  font-size: 14px;
+}
+
+.KeyboardContainer .row .Letter {
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  background-color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.KeyboardContainer .row .Letter:hover {
+  background-color: #333333;
+}
+
+.KeyboardContainer .row .Backspace {
+  cursor: pointer;
+  width: 60px;
+  height: 50px;
+  background-color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.KeyboardContainer .row .Backspace:hover {
+  background-color: #333333;
+}
+
+.KeyboardContainer .row .Enter {
+  cursor: pointer;
+  width: 60px;
+  height: 50px;
+  background-color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.KeyboardContainer .row .Enter:hover {
+  background-color: #333333;
+}
+
+.KeyboardContainer .row .FoundLetter {
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  background-color: #78d058;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.KeyboardContainer .row .IdentifiedLetter {
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  background-color: #FFD369;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.KeyboardContainer .row .IncorrectLetter {
+  cursor: pointer;
+  width: 40px;
+  height: 50px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.popup {
+  z-index: +100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.9);
+  left:0px;
+  top:0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EEEEEE;
+}
+
+.popup .innerPopup {
+  background-color: #333333;
+  padding: 40px 100px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  gap: 0px;
+  text-align: center;
+}
+
+.popup .innerPopup button {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 15px;
+  background-color: #FFD369;
+  border: none;
+  outline: none;
+  color: #141414;
+  box-shadow: 10px 10px;
+}
+
+.popup .innerPopup button:hover {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 15px;
+  background-color:#FFD369;
+  border: none;
+  outline: none;
+  color: #141414;
+  box-shadow: 1px 1px;
+  transform: scale(0.92)
+}
+
+
+h2 {
+  margin: 0px;
+}
+
+p {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+em {
+  color: #FFD369;
+}
+
+.Navbar {
+  width: fill;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 150px;  
+}
+
+.Navbar a {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Navbar a:first-of-type {
+  align-items: first;
+}
+.Navbar a:last-of-type {
+  align-items: end;
+}
+
+.Navbar a:last-of-type div {
+  cursor:pointer;
+  font-weight: 300;
+  font-size: 25px;
+  text-transform: none;
+}
+
+.Navbar a:last-of-type div:hover {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+a {
+  cursor: pointer;
+}
+
+Link {
+  color: white;
+}
+
+
